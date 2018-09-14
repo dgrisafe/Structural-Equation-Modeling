@@ -1,0 +1,37 @@
+!Do NOT open this in text edit bc it adds a ton of hidden characters;
+!Use sublime instead;
+/TITLE
+	PM 603 - HW 3 - Path Model - (HATCHER, 2006. P 164);
+/SPECIFICATIONS
+ 	CASES =240; VARIABLES = 6;  ME=ML; MA=COR; ANA=COV;
+/LABELS
+	V1='COMM' ;  
+	V2='SATIS';  
+   	V3='REWARDS';  
+   	V4='COSTS';
+   	V5='INVEST';
+   	V6='ALTER';
+/EQUATIONS
+   	V1 = 0.33401*V2 + 0.34728*V5 + -0.31088*V6 + E1;
+   	V2 = 0.52145*V3 + -0.34200*V4 + E2;
+/VARIANCES
+   	E1 = 0.35899*;
+   	E2 = 0.45401*;
+   	V3 TO V6 = 1*;
+/COVARIANCES
+   	V3,V4 = -0.44050*;
+   	V3,V5 = 0.53460*;
+   	V3,V6 = -0.40610*;
+   	V4,V5 = -0.18540*;
+   	V4,V6 = 0.35250*;
+   	V5,V6 = -0.39340*;
+/STANDARD DEVIATIONS
+    	2.3192  1.7744  1.2525  1.4086  1.5575  1.8701
+/MATRIX
+  	1.0000   
+   	.6742  1.0000   
+   	.5501   .6721  1.0000  
+  	-.3499  -.5717  -.4405  1.0000  
+   	.6444   .5234   .5346  -.1854  1.0000  
+  	-.6129  -.4952  -.4061   .3525  -.3934  1.0000
+/END

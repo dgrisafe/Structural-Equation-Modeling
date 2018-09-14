@@ -1,0 +1,33 @@
+---
+title: "Run EQS 6.4 From R on Mac"
+author: "Dom"
+date: "9/14/2018"
+output: html_document
+---
+
+##Define EQS 6.4 function in R
+```{r}
+#R SCRIPT FOR RUNNING EQS 6.4 FOR MAC/OSX
+#SYSTEM COMMAND TO LAUNCH EQS 6.4 FOR MAC
+run_eqs <- function(model) {
+  eqs_model <- paste("in=",model,".eqs",sep="")
+  eqs_output <- paste("out=",model,".out",sep="")
+  len <- paste("len=5000000",sep="")
+  ser <- paste("ser=027763197532372515",sep="")
+  pgm <- paste("/Applications/eqs64/pgm/EQS64Mac.app")
+  eqs_command <- paste(pgm,eqs_model,eqs_output,len,ser)
+  system(eqs_command,wait=TRUE)
+}
+```
+
+```{r}
+#SET DEFAULT WORKING FOLDER
+## go to the folder where EQS model and data resided
+## before issuing the following two commands
+setwd("/Users/USC/Documents/GitHub/Structural-Equation-Modeling")
+
+#Run EQS Model
+model <- "eqsFileName"
+run_eqs(model)
+```
+

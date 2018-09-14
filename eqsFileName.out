@@ -1,0 +1,374 @@
+1
+  EQS, A STRUCTURAL EQUATION PROGRAM          MULTIVARIATE SOFTWARE, INC.
+  COPYRIGHT BY P.M. BENTLER                   VERSION 6.4 (C) 1985 - 2018 (B117).
+
+
+    PROGRAM CONTROL INFORMATION
+
+     1  !Do NOT open this in text edit bc it adds a ton of hidden characters;           
+     2  !Use sublime instead;                                                           
+     3  /TITLE                                                                          
+     4  	PM 603 - HW 3 - Path Model - (HATCHER, 2006. P 164);                           
+     5  /SPECIFICATIONS                                                                 
+     6   	CASES =240; VARIABLES = 6;  ME=ML; MA=COR; ANA=COV;                           
+     7  /LABELS                                                                         
+     8  	V1='COMM' ;                                                                    
+     9  	V2='SATIS';                                                                    
+    10     	V3='REWARDS';                                                               
+    11     	V4='COSTS';                                                                 
+    12     	V5='INVEST';                                                                
+    13     	V6='ALTER';                                                                 
+    14  /EQUATIONS                                                                      
+    15     	V1 = 0.33401*V2 + 0.34728*V5 + -0.31088*V6 + E1;                            
+    16     	V2 = 0.52145*V3 + -0.34200*V4 + E2;                                         
+    17  /VARIANCES                                                                      
+    18     	E1 = 0.35899*;                                                              
+    19     	E2 = 0.45401*;                                                              
+    20     	V3 TO V6 = 1*;                                                              
+    21  /COVARIANCES                                                                    
+    22     	V3,V4 = -0.44050*;                                                          
+    23     	V3,V5 = 0.53460*;                                                           
+    24     	V3,V6 = -0.40610*;                                                          
+    25     	V4,V5 = -0.18540*;                                                          
+    26     	V4,V6 = 0.35250*;                                                           
+    27     	V5,V6 = -0.39340*;                                                          
+    28  /STANDARD DEVIATIONS                                                            
+    29      	2.3192  1.7744  1.2525  1.4086  1.5575  1.8701                             
+    30  /MATRIX                                                                         
+    31    	1.0000                                                                       
+    32     	.6742  1.0000                                                               
+    33     	.5501   .6721  1.0000                                                       
+    34    	-.3499  -.5717  -.4405  1.0000                                               
+    35     	.6444   .5234   .5346  -.1854  1.0000                                       
+    36    	-.6129  -.4952  -.4061   .3525  -.3934  1.0000                               
+    37  /END                                                                            
+
+
+       37 RECORDS OF INPUT MODEL FILE WERE READ
+
+
+  COVARIANCE  MATRIX TO BE ANALYZED:     6 VARIABLES (SELECTED FROM   6 VARIABLES)
+  BASED ON   240 CASES.
+
+
+
+                         V1         V2         V3         V4         V5  
+    'COMM'   V1         5.379
+             V2         2.774      3.148
+             V3         1.598      1.494      1.569
+             V4        -1.143     -1.429     -0.777      1.984
+    'SATIS'  V5         2.328      1.446      1.043     -0.407      2.426
+             V6        -2.658     -1.643     -0.951      0.929     -1.146
+
+
+
+                         V6  
+             V6         3.497
+
+
+
+  BENTLER-WEEKS STRUCTURAL REPRESENTATION:
+
+        NUMBER OF DEPENDENT VARIABLES =  2
+            DEPENDENT V'S :     1    2
+
+        NUMBER OF INDEPENDENT VARIABLES =  6
+            INDEPENDENT V'S :     3    4    5    6
+            INDEPENDENT E'S :     1    2
+
+        NUMBER OF FREE PARAMETERS =  17
+        NUMBER OF FIXED NONZERO PARAMETERS =   2
+
+ *** WARNING MESSAGES ABOVE, IF ANY, REFER TO THE MODEL PROVIDED.
+     CALCULATIONS FOR INDEPENDENCE MODEL NOW BEGIN.
+
+ *** WARNING MESSAGES ABOVE, IF ANY, REFER TO INDEPENDENCE MODEL.
+     CALCULATIONS FOR USER'S MODEL NOW BEGIN.
+
+
+  3RD STAGE OF COMPUTATION REQUIRED      4419 WORDS OF MEMORY.
+  PROGRAM ALLOCATED   5000000 WORDS
+
+  DETERMINANT OF INPUT MATRIX IS   0.26796D+02
+
+  PARAMETER ESTIMATES APPEAR IN ORDER,
+  NO SPECIAL PROBLEMS WERE ENCOUNTERED DURING OPTIMIZATION.
+
+
+
+  RESIDUAL COVARIANCE MATRIX  (S-SIGMA) :       
+
+
+
+                         V1         V2         V3         V4         V5  
+    'COMM'   V1         0.416
+             V2         0.457      0.000
+             V3         0.032      0.000      0.000
+             V4         0.060      0.000      0.000      0.000
+    'SATIS'  V5         0.228      0.501      0.000      0.000      0.000
+             V6        -0.246     -0.540      0.000      0.000      0.000
+
+
+
+                         V6  
+             V6         0.000
+
+                                  AVERAGE ABSOLUTE RESIDUAL =         0.1182
+                     AVERAGE OFF-DIAGONAL ABSOLUTE RESIDUAL =         0.1377
+
+
+
+  STANDARDIZED RESIDUAL MATRIX:                 
+
+
+
+                         V1         V2         V3         V4         V5  
+    'COMM'   V1         0.077
+             V2         0.111      0.000
+             V3         0.011      0.000      0.000
+             V4         0.018      0.000      0.000      0.000
+    'SATIS'  V5         0.063      0.181      0.000      0.000      0.000
+             V6        -0.057     -0.163      0.000      0.000      0.000
+
+
+
+                         V6  
+             V6         0.000
+
+                     AVERAGE ABSOLUTE STANDARDIZED RESIDUAL =         0.0325
+        AVERAGE OFF-DIAGONAL ABSOLUTE STANDARDIZED RESIDUAL =         0.0403
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+
+  LARGEST STANDARDIZED RESIDUALS:
+
+      NO.    PARAMETER   ESTIMATE      NO.    PARAMETER   ESTIMATE
+      ---    ---------   --------      ---    ---------   --------
+       1     V5,  V2        0.181      11     V3,  V2        0.000
+       2     V6,  V2       -0.163      12     V6,  V3        0.000
+       3     V2,  V1        0.111      13     V4,  V2        0.000
+       4     V1,  V1        0.077      14     V6,  V5        0.000
+       5     V5,  V1        0.063      15     V5,  V4        0.000
+       6     V6,  V1       -0.057      16     V6,  V4        0.000
+       7     V4,  V1        0.018      17     V4,  V4        0.000
+       8     V3,  V1        0.011      18     V4,  V3        0.000
+       9     V6,  V6        0.000      19     V5,  V5        0.000
+      10     V5,  V3        0.000      20     V2,  V2        0.000
+
+
+
+  DISTRIBUTION OF STANDARDIZED RESIDUALS
+
+
+
+     ----------------------------------------                     
+     !                                      !                     
+   20-                                      -                     
+     !                                      !                     
+     !                                      !                     
+     !                                      !                     
+     !                                      !            RANGE      FREQ PERCENT
+   15-                                      -                     
+     !                    *                 !    1   -0.5  -  --       0   0.00%
+     !                    *                 !    2   -0.4  -  -0.5     0   0.00%
+     !                    *                 !    3   -0.3  -  -0.4     0   0.00%
+     !                    *                 !    4   -0.2  -  -0.3     0   0.00%
+   10-                    *                 -    5   -0.1  -  -0.2     1   4.76%
+     !                    *                 !    6    0.0  -  -0.1     4  19.05%
+     !                    *                 !    7    0.1  -   0.0    14  66.67%
+     !                    *                 !    8    0.2  -   0.1     2   9.52%
+     !                    *                 !    9    0.3  -   0.2     0   0.00%
+    5-                    *                 -    A    0.4  -   0.3     0   0.00%
+     !                 *  *                 !    B    0.5  -   0.4     0   0.00%
+     !                 *  *                 !    C     ++  -   0.5     0   0.00%
+     !                 *  *  *              !    -------------------------------
+     !              *  *  *  *              !            TOTAL        21 100.00%
+     ----------------------------------------                     
+        1  2  3  4  5  6  7  8  9  A  B  C    EACH "*" REPRESENTS    1 RESIDUALS
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+
+
+
+  GOODNESS OF FIT SUMMARY FOR METHOD = ML    
+
+  INDEPENDENCE MODEL CHI-SQUARE        =     672.724 ON    15 DEGREES OF FREEDOM
+
+  INDEPENDENCE AIC =     642.724   INDEPENDENCE CAIC =     575.514
+         MODEL AIC =      28.845          MODEL CAIC =      10.923
+
+  LOG LIKELIHOOD BASED ON THE STRUCTURED MODEL                 =        4903.280
+  AKAIKE INFORMATION CRITERION (AIC) BASED ON LOG LIKELIHOOD   =        4937.280
+  BAYESIAN INFORMATION CRITERION (BIC) BASED ON LOG LIKELIHOOD =        4996.451
+
+  CHI-SQUARE =       36.845 BASED ON       4 DEGREES OF FREEDOM
+  PROBABILITY VALUE FOR THE CHI-SQUARE STATISTIC IS      0.00000
+
+  THE NORMAL THEORY RLS CHI-SQUARE FOR THIS ML SOLUTION IS         34.227.
+  PROBABILITY VALUE FOR THE CHI-SQUARE STATISTIC IS      0.00000
+
+  FIT INDICES
+  -----------
+  BENTLER-BONETT     NORMED FIT INDEX =     0.945
+  BENTLER-BONETT NON-NORMED FIT INDEX =     0.813
+  COMPARATIVE FIT INDEX (CFI)         =     0.950
+
+  RELIABILITY COEFFICIENTS
+  ------------------------
+  CRONBACH'S ALPHA                                   =     0.167
+  RELIABILITY COEFFICIENT RHO                        =     0.736
+
+
+
+
+                         ITERATIVE SUMMARY
+
+                     PARAMETER
+  ITERATION          ABS CHANGE         ALPHA                FUNCTION
+      1               0.764557         1.00000               0.83019
+      2               0.132184         1.00000               0.27893
+      3               0.089168         1.00000               0.15512
+      4               0.003098         1.00000               0.15426
+      5               0.000915         1.00000               0.15416
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+
+  MEASUREMENT EQUATIONS WITH STANDARD ERRORS AND TEST STATISTICS
+  STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+
+
+
+ 'COMM'  =V1  =    .449*V2    +  .511*V5    -  .381*V6    + 1.000 E1  
+                   .055          .065          .054               
+                  8.111@        7.888@       -7.091@              
+
+ 'SATIS' =V2  =    .739*V3    -  .431*V4    + 1.000 E2  
+                   .069          .061               
+                 10.741@       -7.045@              
+
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+  VARIANCES OF INDEPENDENT VARIABLES
+  ----------------------------------
+  STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+
+                  V                                F
+                 ---                              ---
+ V3  -'REWARDS            1.569*I                                I              
+                           .144 I                                I              
+                         10.932@I                                I              
+                                I                                I              
+ V4  -'COSTS'             1.984*I                                I              
+                           .182 I                                I              
+                         10.932@I                                I              
+                                I                                I              
+ V5  -'INVEST'            2.426*I                                I              
+                           .222 I                                I              
+                         10.932@I                                I              
+                                I                                I              
+ V6  -'ALTER'             3.497*I                                I              
+                           .320 I                                I              
+                         10.932@I                                I              
+                                I                                I              
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+  VARIANCES OF INDEPENDENT VARIABLES
+  ----------------------------------
+  STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+
+                  E                                D
+                 ---                              ---
+ E1  -'COMM'              1.931*I                                I              
+                           .177 I                                I              
+                         10.932@I                                I              
+                                I                                I              
+ E2  -'SATIS'             1.429*I                                I              
+                           .131 I                                I              
+                         10.932@I                                I              
+                                I                                I              
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+  COVARIANCES AMONG INDEPENDENT VARIABLES
+  ---------------------------------------
+  STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+
+                  V                                F
+                 ---                              ---
+ V4  -'COSTS'             -.777*I                                I              
+ V3  -'REWARDS             .125 I                                I              
+                         -6.232@I                                I              
+                                I                                I              
+ V5  -'INVEST'            1.043*I                                I              
+ V3  -'REWARDS             .143 I                                I              
+                          7.289@I                                I              
+                                I                                I              
+ V6  -'ALTER'             -.951*I                                I              
+ V3  -'REWARDS             .164 I                                I              
+                         -5.817@I                                I              
+                                I                                I              
+ V5  -'INVEST'            -.407*I                                I              
+ V4  -'COSTS'              .144 I                                I              
+                         -2.818@I                                I              
+                                I                                I              
+ V6  -'ALTER'              .929*I                                I              
+ V4  -'COSTS'              .181 I                                I              
+                          5.140@I                                I              
+                                I                                I              
+ V6  -'ALTER'            -1.146*I                                I              
+ V5  -'INVEST'             .202 I                                I              
+                         -5.660@I                                I              
+                                I                                I              
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+
+  STANDARDIZED SOLUTION:                                              R-SQUARED
+
+
+
+ 'COMM'  =V1  =    .358*V2    +  .357*V5    -  .320*V6    +  .624 E1       .611 
+ 'SATIS' =V2  =    .521*V3    -  .342*V4    +  .674 E2                     .546 
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+  CORRELATIONS AMONG INDEPENDENT VARIABLES
+  ---------------------------------------
+
+                  V                                F
+                 ---                              ---
+ V4  -'COSTS'             -.441*I                                I              
+ V3  -'REWARDS                  I                                I              
+                                I                                I              
+ V5  -'INVEST'             .535*I                                I              
+ V3  -'REWARDS                  I                                I              
+                                I                                I              
+ V6  -'ALTER'             -.406*I                                I              
+ V3  -'REWARDS                  I                                I              
+                                I                                I              
+ V5  -'INVEST'            -.185*I                                I              
+ V4  -'COSTS'                   I                                I              
+                                I                                I              
+ V6  -'ALTER'              .353*I                                I              
+ V4  -'COSTS'                   I                                I              
+                                I                                I              
+ V6  -'ALTER'             -.393*I                                I              
+ V5  -'INVEST'                  I                                I              
+                                I                                I              
+
+
+
+
+ -------------------------------------------------------------------------------
+                           E N D    O F    M E T H O D
+ -------------------------------------------------------------------------------
+1
+  today is   18/ 9/14
+  Execution begins at        0.006
+  Execution ends   at        0.012
+  Elapsed time =      0.007 seconds 
