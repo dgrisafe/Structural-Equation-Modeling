@@ -24,7 +24,7 @@ run_eqs <- function(model) {
 #SET DEFAULT WORKING FOLDER
 ## go to the folder where EQS model and data resided
 ## before issuing the following two commands
-setwd("/Users/USC/Documents/GitHub/Structural-Equation-Modeling")
+setwd("/Users/USC/Documents/GitHub/Structural-Equation-Modeling/EQS in R")
 
 #Run EQS Model
 model <- "eqsFileName"
